@@ -1,6 +1,5 @@
 package com.autoscribe.android.ui.screens
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Arrangement
@@ -14,7 +13,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.stickyHeader
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Close
@@ -52,7 +50,6 @@ import com.autoscribe.android.ui.theme.AutoScribeColors
  * per-country and per-server checkboxes. Desktop semantics preserved:
  * an empty selection means every server.
  */
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun LocationPicker(
     pops: List<Pop>,
@@ -142,7 +139,7 @@ fun LocationPicker(
                 }
                 LazyColumn(modifier = Modifier.weight(1f)) {
                     for ((country, countryPops) in grouped) {
-                        stickyHeader {
+                        item {
                             Row(
                                 modifier = Modifier
                                     .fillMaxWidth()
