@@ -71,8 +71,8 @@ fun ToggleRow(
     label: String,
     hint: String?,
     checked: Boolean,
-    onCheckedChange: (Boolean) -> Unit,
     modifier: Modifier = Modifier,
+    onCheckedChange: (Boolean) -> Unit,
 ) {
     Row(
         modifier = modifier.fillMaxWidth().padding(vertical = 6.dp),
