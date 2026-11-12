@@ -3,7 +3,6 @@ package com.autoscribe.android.ui.screens
 import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.horizontalScroll
@@ -18,7 +17,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.stickyHeader
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
@@ -67,7 +65,6 @@ import java.util.Locale
  * Tunnel setup: WireGuard readiness, the naming contract, the imported
  * checklist, per-tunnel probing, and the server-list import.
  */
-@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun TunnelsScreen(
     vm: MainViewModel,
@@ -260,7 +257,7 @@ fun TunnelsScreen(
         }
 
         for ((country, countryTasks) in grouped) {
-            stickyHeader {
+            item {
                 Row(
                     modifier = Modifier.fillMaxWidth().background(AutoScribeColors.Sidebar).padding(vertical = 4.dp),
                     verticalAlignment = Alignment.CenterVertically,
